@@ -1,4 +1,8 @@
 FancyAppStore::Application.routes.draw do
+  resources :data_entries
+
+  resources :applications
+
   resources :users
 
   # The priority is based upon order of creation:
