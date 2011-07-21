@@ -1,4 +1,6 @@
 FancyAppStore::Application.routes.draw do
+  resources :comments
+
   resources :data_entries
 
   resources :applications
