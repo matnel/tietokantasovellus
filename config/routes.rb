@@ -1,4 +1,4 @@
-Logger::Application.routes.draw do
+FancyAppStore::Application.routes.draw do
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
