@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Logger::Application.load_tasks
+FancyAppStore::Application.load_tasks
