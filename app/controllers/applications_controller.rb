@@ -85,4 +85,9 @@ class ApplicationsController < ApplicationController
      @application = Application.find( params[:id] )
      render json: @application.to_json( :only => :version )
   end
+
+   def all_applications
+      return Application.all
+   end
+
 end
