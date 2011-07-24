@@ -1,4 +1,7 @@
 class ApplicationsController < ApplicationController
+
+  before_filter :all_applications
+
   def index
     @applications = Application.all
 
@@ -73,8 +76,9 @@ class ApplicationsController < ApplicationController
      render json: @application.to_json( :only => :version )
   end
 
-   def all_applications
-      return Application.all
-   end
+   private
+     def all_applications
+        @applications = Application.all
+     end
 
 end
