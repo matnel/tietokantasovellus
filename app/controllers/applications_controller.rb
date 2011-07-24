@@ -80,4 +80,9 @@ class ApplicationsController < ApplicationController
       format.json { head :ok }
     end
   end
+
+  def version
+     @application = Application.find( params[:id] )
+     render json: @application.to_json( :only => :version )
+  end
 end
