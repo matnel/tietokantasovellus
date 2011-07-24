@@ -1,20 +1,15 @@
+<div id='left_panel'>
+  <%= render all_applications %>
+</div>
+
+<idv id='main_panel'>
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Title:</b>
-  <%= @application.title %>
-</p>
+<h3><%= @application.title %></h3>
 
-<p>
-  <b>Description:</b>
-  <%= @application.description %>
+<%= @application.description %>
 </p>
-
-<p>
-  <b>Version:</b>
-  <%= @application.version %>
-</p>
-
 
 <%= link_to 'Edit', edit_application_path(@application) %> |
 <%= link_to 'Back', applications_path %>
+</div>
