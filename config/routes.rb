@@ -7,6 +7,8 @@ FancyAppStore::Application.routes.draw do
 
   resources :users
 
+  match 'applications/:id/version' => 'applications#version'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
