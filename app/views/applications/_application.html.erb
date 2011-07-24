@@ -1,6 +1,6 @@
 <div id='application-<%= application.id %>' class='application'>
-    <%= application.title %>
-    <%= application.description %>
+    <h2><%= application.title %></h2>
+    <p><%= application.description %></p>
     <%= link_to 'Show', application %>
     <%= link_to 'Edit', edit_application_path(application) %>
     <%= link_to 'Destroy', application, confirm: 'Are you sure?', method: :delete %>
