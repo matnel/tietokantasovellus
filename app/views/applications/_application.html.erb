@@ -1,8 +1,7 @@
-  <tr>
-    <td><%= application.title %></td>
-    <td><%= application.description %></td>
-    <td><%= application.version %></td>
-    <td><%= link_to 'Show', application %></td>
-    <td><%= link_to 'Edit', edit_application_path(application) %></td>
-    <td><%= link_to 'Destroy', application, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
+<div id='application-<%= application.id %>' class='application'>
+    <%= application.title %>
+    <%= application.description %>
+    <%= link_to 'Show', application %>
+    <%= link_to 'Edit', edit_application_path(application) %>
+    <%= link_to 'Destroy', application, confirm: 'Are you sure?', method: :delete %>
+</div>
