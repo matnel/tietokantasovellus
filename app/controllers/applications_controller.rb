@@ -1,6 +1,4 @@
 class ApplicationsController < ApplicationController
-  # GET /applications
-  # GET /applications.json
   def index
     @applications = Application.all
 
@@ -10,8 +8,6 @@ class ApplicationsController < ApplicationController
     end
   end
 
-  # GET /applications/1
-  # GET /applications/1.json
   def show
     @application = Application.find(params[:id])
 
@@ -21,8 +17,6 @@ class ApplicationsController < ApplicationController
     end
   end
 
-  # GET /applications/new
-  # GET /applications/new.json
   def new
     @application = Application.new
 
@@ -32,13 +26,10 @@ class ApplicationsController < ApplicationController
     end
   end
 
-  # GET /applications/1/edit
   def edit
     @application = Application.find(params[:id])
   end
 
-  # POST /applications
-  # POST /applications.json
   def create
     @application = Application.new(params[:application])
 
@@ -53,8 +44,6 @@ class ApplicationsController < ApplicationController
     end
   end
 
-  # PUT /applications/1
-  # PUT /applications/1.json
   def update
     @application = Application.find(params[:id])
 
@@ -69,8 +58,6 @@ class ApplicationsController < ApplicationController
     end
   end
 
-  # DELETE /applications/1
-  # DELETE /applications/1.json
   def destroy
     @application = Application.find(params[:id])
     @application.destroy
