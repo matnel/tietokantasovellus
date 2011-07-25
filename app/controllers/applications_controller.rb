@@ -3,7 +3,7 @@ class ApplicationsController < ApplicationController
   before_filter :all_applications
 
   def index
-    @applications = Application.all
+    ## @applications provided by before_filter!
 
     respond_to do |format|
       format.html # index.html.erb
