@@ -17,4 +17,9 @@
 <% @comment = Comment.new %>
 <%= render :partial => 'comments/form' %>
 
+<h3>Comments for this application</h3>
+
+<%= "No comments yet!" if @application.comments %>
+<%= render @application.comments %>
+
 </div>
