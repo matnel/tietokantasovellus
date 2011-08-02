@@ -18,6 +18,9 @@
   <div class="field">
     <%= f.label :description %><br />
     <%= f.text_area :description %>
+
+<span id='application_description_length'>0</span>
+
   </div>
   <div class="field">
     <%= f.label :version %><br />
@@ -27,13 +30,10 @@
     <%= f.submit %>
   </div>
 
-<!--- show description lenght -->
-
-<span id='application_description_length'>0</span>
-
 <script type='text/javascript'>
 $('#application_description').keyup( function() {
-	$('#application_description_length').html( $(this).val().length );
+	var text = $(this).parent().find('#application_description_length');
+	text.html( $(this).val().length );
 } );
 </script>
 
