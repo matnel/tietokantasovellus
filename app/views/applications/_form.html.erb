@@ -19,7 +19,7 @@
     <%= f.label :description %><br />
     <%= f.text_area :description %>
 
-<span id='application_description_length'>0</span>
+    <span id='application_description_length'><%= @application.description.length %></span>
 
   </div>
   <div class="field">
