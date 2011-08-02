@@ -31,7 +31,7 @@
   </div>
 
 <script type='text/javascript'>
-$('#application_description').keyup( function() {
+$('#application_description').bind( 'keyup', function() {
 	var text = $(this).parent().find('#application_description_length');
 	text.html( $(this).val().length );
 } );
