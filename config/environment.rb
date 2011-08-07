@@ -5,4 +5,4 @@ require File.expand_path('../application', __FILE__)
 FancyAppStore::Application.initialize!
 
 ## use external libs
-config.gem "carrierwave"
+# config.gem "carrierwave"
