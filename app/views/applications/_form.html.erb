@@ -27,6 +27,16 @@
     <%= f.text_field :version %>
   </div>
 
+  <div class="field">
+      <%= f.label :appexecutable %><br />
+      <%= f.file_field :appexecutable %>
+  </div>
+
+  <div class="field">
+      <%= f.label :appimage %><br />
+      <%= f.file_field :appimage %>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
