@@ -1,11 +1,13 @@
 FancyAppStore::Application.routes.draw do
   resources :comments
-
   resources :data_entries
 
   resources :applications do
+     resources :comments
+     resources :data_entries
      member do
        get 'version'
+       get 'statistics'
      end
   end
 

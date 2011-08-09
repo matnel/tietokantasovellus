@@ -76,9 +76,12 @@ class ApplicationsController < ApplicationController
      render json: @application.to_json( :only => :version )
   end
 
-   private
-     def all_applications
+  def statistics
+      render :nothing => true
+  end
+
+  def all_applications
         @applications = Application.all
-     end
+  end
 
 end
