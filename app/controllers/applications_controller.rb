@@ -84,6 +84,9 @@ class ApplicationsController < ApplicationController
       end
   end
 
+  ## everything below this is only to be used inside contoller
+  private
+
   def all_applications
         @applications = Application.all
   end
