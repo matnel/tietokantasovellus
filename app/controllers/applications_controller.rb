@@ -77,7 +77,11 @@ class ApplicationsController < ApplicationController
   end
 
   def statistics
-      render :nothing => true
+      @application = Application.find( params[:id] )
+      respond_to do |format|
+         format.html # statistics.html.erb
+         format.json { render json: @application }
+      end
   end
 
   def all_applications
