@@ -13,13 +13,12 @@
 <%= link_to 'Edit', edit_application_path(@application) %> |
 <%= link_to 'Back', applications_path %>
 
+<h3>Comments for this application</h3>
 
 <% @comment = Comment.new %>
 <%= render :partial => 'comments/form' %>
 
-<h3>Comments for this application</h3>
-
-<%= "No comments yet!" if @application.comments %>
+<%= "No comments yet!" if @application.comments.empty? %>
 <%= render @application.comments %>
 
 </div>
