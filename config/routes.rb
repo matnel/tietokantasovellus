@@ -11,7 +11,11 @@ FancyAppStore::Application.routes.draw do
      end
   end
 
-  resources :users
+  resources :users do
+    member do
+      post 'login'
+    end
+  end
 
   root :to => 'applications#index'
 
