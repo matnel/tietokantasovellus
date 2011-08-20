@@ -3,13 +3,15 @@ require "digest/md5"
 class User < ActiveRecord::Base
 
   validates_uniqueness_of :username
- 
+
+   before_save :encrypt 
+
   def check_password?( password )
-	@password == Digest::MD5.hexdigest( password + @@salt )
+	self.password == Digest::MD5.hexdigest( password + @@salt )
   end
 
-  def password( password = '' )
-        @password = Digest::MD5.hexdigest( password + @@salt )
+  def encrypt()
+        self.password = Digest::MD5.hexdigest( self.password + @@salt )
   end
 
   private
