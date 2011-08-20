@@ -1,0 +1,15 @@
+<%= form_tag( login_path, :method => "post") do %>
+
+  <div class="field">
+    <%= label :username, "Käyttäjätunnus" %><br />
+    <%= text_field :username, "" %>
+  </div>
+  <div class="field">
+    <%= label :password, "salasana" %><br />
+    <%= password_field :password, "" %>
+  </div>
+  <div class="actions">
+    <%= submit_tag "Do Magic" %>
+  </div>
+
+<% end %>

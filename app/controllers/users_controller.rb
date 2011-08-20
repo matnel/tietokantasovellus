@@ -82,6 +82,13 @@ class UsersController < ApplicationController
   end
 
   def login
+      params[:username]
+      @user = User.where( :username => params[:username] ).first
+      if @user.check_password?( params[:password] )
+          render None
+      else
+          render None
+      end
   end
 
 end
