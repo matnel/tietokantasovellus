@@ -17,7 +17,9 @@
   </div>
   <div class="field">
     <%= f.label :password %><br />
-    <%= f.password_field :password %>
+    <%= f.password_field :password %><br/>
+    <%= f.label  "Confirm password" %><br />
+    <%= f.password_field :password_confirm %>
   </div>
   <div class="field">
     <%= f.label :firstname %><br />
