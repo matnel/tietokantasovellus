@@ -19,7 +19,9 @@
     <%= f.label :password %><br />
     <%= f.password_field :password %><br/>
     <%= f.label  "Confirm password" %><br />
-    <%= f.password_field :password_confirm %>
+    <%= f.password_field :password_confirm %><br />
+    <!-- siirrä CSSään -->
+    <p class='error' style='display:none;'>Passwords do not match</p>
   </div>
   <div class="field">
     <%= f.label :firstname %><br />
@@ -37,3 +39,16 @@
     <%= f.submit %>
   </div>
 <% end %>
+
+<script type='text/javascript'>
+ $('[name="user[password_confirm]"]').bind( 'change' , function() {
+     var pw = $(this).parent().find('[name="user[password]"]');
+     var pw2 = $(this);
+     var error = $(this).parent().find('.error');
+     if( pw.val() != pw2.val() ) {
+        error.show();
+     } else {
+        error.hide();
+     }
+  } );
+</script>
