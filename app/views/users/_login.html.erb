@@ -1,3 +1,6 @@
+<% if @current_user %>
+Mui. <%= @current_user.name() %>
+<% else %>
 <%= form_tag( login_users_path, :method => "post") do %>
 
   <div class="field">
@@ -12,4 +15,5 @@
     <%= submit_tag "Do Magic" %>
   </div>
 
+<% end %>
 <% end %>
