@@ -6,22 +6,28 @@
 <idv id='main_panel'>
 <p id="notice"><%= notice %></p>
 
-<h3><%= @application.title %></h3>
+<h2><%= @application.title %></h2>
+
+<%= image_tag @application.appimage_url %>
+
+<br/>
 
 <%= @application.description %>
 </p>
 
+<!--
 <%= link_to 'Edit', edit_application_path(@application) %> |
 <%= link_to 'Back', applications_path %>
+-->
+
+<%= link_to 'Download now' , @application.appexecutable_url %>
 
 <h3>Comments for this application</h3>
 
 <% @comment = Comment.new %>
 <%= render :partial => 'comments/form' %>
 
-<%= debug @application.attributes()  %>
-
-<%= "No comments yet!" if @application.attributes() %>
+<%= "No comments yet!" if @application.has_comments?  %>
 
 <%= render @application.comments %>
 
