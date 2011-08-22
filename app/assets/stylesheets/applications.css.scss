@@ -6,3 +6,10 @@ body.applications {
   // Add the applications class to your body tag
   // Then, place scoped styles here.
 }
+
+.application {
+   float: left;
+   margin-right: 10px;
+   margin-top: 10px;
+   border: 1px solid black;
+}
