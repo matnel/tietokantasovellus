@@ -4,7 +4,9 @@ class User < ActiveRecord::Base
 
   validates_uniqueness_of :username
 
-   before_save :encrypt 
+  attr_protected :password_confirm
+
+  before_save :encrypt 
 
   def check_password?( password )
 	self.password == Digest::MD5.hexdigest( password + @@salt )
