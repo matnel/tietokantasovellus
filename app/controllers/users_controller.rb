@@ -85,7 +85,8 @@ class UsersController < ApplicationController
       @user = User.where( :username => params[:username] ).first
       ## todo fixme: ugly?
       if @user.check_password?( params[:password][0] )
-          render None
+	  session[:current_user] = @user.id
+          redirect_to root_url
       else
           render None
       end
