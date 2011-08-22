@@ -13,3 +13,13 @@ body.applications {
    margin-top: 10px;
    border: 1px solid black;
 }
+
+#left_panel {
+  float: left;
+  width: 30%;
+}
+
+#main_panel {
+  float: right;
+  width: 70%;
+}
