@@ -1,4 +1,4 @@
 <p class='comment' id='comment-id-<%= comment.id %>'>
-  <b>Comment:</b>
-  <%= comment.comment %>
+  <%= comment.comment %> <br/>
+  <%= comment.updated_at.strftime("%Y-%m-%d @ %H:%M") %>
 </p>
