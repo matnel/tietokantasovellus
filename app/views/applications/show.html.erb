@@ -29,6 +29,6 @@
 
 <%= "No comments yet!" if @application.has_comments?  %>
 
-<%= render @application.comments %>
+<%= render @application.comments.reverse %>
 
 </div>
