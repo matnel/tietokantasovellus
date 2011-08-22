@@ -12,8 +12,8 @@ FancyAppStore::Application.routes.draw do
   end
 
   resources :users do
-    member do
-      post 'login'
+    collection do
+       post 'login'
     end
   end
 
