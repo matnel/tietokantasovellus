@@ -1,4 +1,5 @@
 <div id='left_panel'>
+  <% @applications.delete( @application ) %>
   <%= render @applications %>
 </div>
 
@@ -18,7 +19,9 @@
 <% @comment = Comment.new %>
 <%= render :partial => 'comments/form' %>
 
-<%= "No comments yet!" if @application.has_comments? %>
+<%= debug @application.attributes()  %>
+
+<%= "No comments yet!" if @application.attributes() %>
 
 <%= render @application.comments %>
 
