@@ -6,3 +6,7 @@ body.comments {
   // Add the comments class to your body tag
   // Then, place scoped styles here.
 }
+
+.comment {
+   border-bottom: 1px solid gray;
+}
