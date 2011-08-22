@@ -82,9 +82,9 @@ class UsersController < ApplicationController
   end
 
   def login
-      params[:username]
       @user = User.where( :username => params[:username] ).first
-      if @user.check_password?( params[:password] )
+      ## todo fixme: ugly?
+      if @user.check_password?( params[:password][0] )
           render None
       else
           render None
