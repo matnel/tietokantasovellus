@@ -1,5 +1,5 @@
 <% if @current_user %>
-Mui. <%= link_to @current_user.name() , edit_user_path( @current_user ) %>
+Mui. <%= link_to @current_user.name() , edit_user_path( @current_user ) %> <%= link_to 'Logout' , logout_users_path %>
 <% else %>
 <%= form_tag( login_users_path, :method => "post") do %>
 
