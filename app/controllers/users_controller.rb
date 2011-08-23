@@ -95,4 +95,9 @@ class UsersController < ApplicationController
       end
   end
 
+  def logout
+    session[:current_user] = nil
+    redirect_to root_url
+  end
+
 end
