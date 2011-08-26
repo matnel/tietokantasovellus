@@ -74,12 +74,17 @@ class UsersController < ApplicationController
 
   def login
       @user = User.where( :username => params[:username] ).first
+      if @user.nil?
+          flash[:notice] = "Username is incorrect"
+         redirect_to users_path and return
+      end
       ## todo fixme: ugly?
-      if @user.check_password?( params[:password][0] )
+      if @user.check_password?( params[:password] )
 	  session[:current_user] = @user.id
           redirect_to root_url
       else
-          render None
+          flash[:notice] = "Password multifail"
+          render "index"
       end
   end
 
