@@ -1,10 +1,9 @@
 FancyAppStore::Application.routes.draw do
   resources :comments
-  resources :data_entries
 
   resources :applications do
      resources :comments
-     resources :data_entries
+     resources :data_entries, :only => [ :new , :create ]
      member do
        get 'version'
        get 'statistics'

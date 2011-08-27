@@ -1,23 +1,5 @@
 class DataEntriesController < ApplicationController
 
-  def index
-    @data_entries = DataEntry.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @data_entries }
-    end
-  end
-
-  def show
-    @data_entry = DataEntry.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @data_entry }
-    end
-  end
-
   def new
     @data_entry = DataEntry.new
 
@@ -25,10 +7,6 @@ class DataEntriesController < ApplicationController
       format.html # new.html.erb
       format.json { render json: @data_entry }
     end
-  end
-
-  def edit
-    @data_entry = DataEntry.find(params[:id])
   end
 
   def create
@@ -59,13 +37,4 @@ class DataEntriesController < ApplicationController
     end
   end
 
-  def destroy
-    @data_entry = DataEntry.find(params[:id])
-    @data_entry.destroy
-
-    respond_to do |format|
-      format.html { redirect_to data_entries_url }
-      format.json { head :ok }
-    end
-  end
 end
