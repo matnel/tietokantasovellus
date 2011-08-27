@@ -1,6 +1,7 @@
 class ApplicationsController < ApplicationController
 
   before_filter :all_applications
+  before_filter :is_owner, :only => [ :edit, :update, :destroy, :statistics ]
 
   def index
     ## @applications provided by before_filter!
@@ -73,7 +74,7 @@ class ApplicationsController < ApplicationController
 
   def version
      @application = Application.find( params[:id] )
-     render json: @application.to_json( :only => :version )
+     render json: @application.to_json( :only => [ :version, :appexecutable_url ] )
   end
 
   def statistics
@@ -89,6 +90,13 @@ class ApplicationsController < ApplicationController
 
   def all_applications
         @applications = Application.all
+  end
+
+  def is_owner
+     @application = Application.find( params[:id] )
+     if current_user != @application.user
+         render :nothing => true
+     end
   end
 
 end
