@@ -14,8 +14,8 @@ class DataEntriesController < ApplicationController
 
     respond_to do |format|
       if @data_entry.save
-        format.html { redirect_to @data_entry, notice: 'Data entry was successfully created.' }
-        format.json { render json: @data_entry, status: :created, location: @data_entry }
+        format.html { redirect_to root_url, notice: 'Data entry was successfully created.' }
+        format.json { render json: 'Ok' }
       else
         format.html { render action: "new" }
         format.json { render json: @data_entry.errors, status: :unprocessable_entity }
