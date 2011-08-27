@@ -15,10 +15,7 @@
 <%= @application.description %>
 </p>
 
-<!--
-<%= link_to 'Edit', edit_application_path(@application) %> |
-<%= link_to 'Back', applications_path %>
--->
+<%= link_to @application.user.name(), @application.user %> <br/>
 
 <%= link_to 'Download now' , @application.appexecutable_url %>
 
