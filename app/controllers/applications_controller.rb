@@ -2,6 +2,7 @@ class ApplicationsController < ApplicationController
 
   before_filter :all_applications
   before_filter :is_owner, :only => [ :edit, :update, :destroy, :statistics ]
+  before_filter :is_logged_in, :only => [ :new, :create ]
 
   def index
     ## @applications provided by before_filter!
