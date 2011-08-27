@@ -1,6 +1,5 @@
 class DataEntriesController < ApplicationController
-  # GET /data_entries
-  # GET /data_entries.json
+
   def index
     @data_entries = DataEntry.all
 
@@ -10,8 +9,6 @@ class DataEntriesController < ApplicationController
     end
   end
 
-  # GET /data_entries/1
-  # GET /data_entries/1.json
   def show
     @data_entry = DataEntry.find(params[:id])
 
@@ -21,8 +18,6 @@ class DataEntriesController < ApplicationController
     end
   end
 
-  # GET /data_entries/new
-  # GET /data_entries/new.json
   def new
     @data_entry = DataEntry.new
 
@@ -32,13 +27,10 @@ class DataEntriesController < ApplicationController
     end
   end
 
-  # GET /data_entries/1/edit
   def edit
     @data_entry = DataEntry.find(params[:id])
   end
 
-  # POST /data_entries
-  # POST /data_entries.json
   def create
     @data_entry = DataEntry.new(params[:data_entry])
 
@@ -53,8 +45,6 @@ class DataEntriesController < ApplicationController
     end
   end
 
-  # PUT /data_entries/1
-  # PUT /data_entries/1.json
   def update
     @data_entry = DataEntry.find(params[:id])
 
@@ -69,8 +59,6 @@ class DataEntriesController < ApplicationController
     end
   end
 
-  # DELETE /data_entries/1
-  # DELETE /data_entries/1.json
   def destroy
     @data_entry = DataEntry.find(params[:id])
     @data_entry.destroy
