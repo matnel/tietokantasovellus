@@ -24,8 +24,7 @@ class User < ActiveRecord::Base
   end
 
   def check_password?( password )
-        Digest::MD5.hexdigest( self.password + @@salt )
-	self.password == Digest::MD5.hexdigest( password + @@salt )
+	self.password == Digest::MD5.hexdigest( password[0] + @@salt )
   end
 
   def encrypt()
