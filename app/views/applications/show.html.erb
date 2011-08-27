@@ -19,6 +19,12 @@
 
 <%= link_to 'Download now' , @application.appexecutable_url %>
 
+<% if @application.user == @current_user %>
+<h3>Manage</h3>
+<%= link_to 'Edit', edit_application_path(@application) %>
+<%= link_to 'Destroy', @application, confirm: 'Are you sure?', method: :delete %>
+<% end %>
+
 <h3>Comments for this application</h3>
 
 <% @comment = Comment.new %>
