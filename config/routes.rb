@@ -1,7 +1,7 @@
 FancyAppStore::Application.routes.draw do
   resources :comments
 
-  resources :applications do
+  resources :applications , :except => [ :new , :create ] do
      resources :comments
      resources :data_entries, :only => [ :new , :create ]
      member do
@@ -15,6 +15,7 @@ FancyAppStore::Application.routes.draw do
        post 'login'
        get 'logout'
     end
+    resources :applications
   end
 
   root :to => 'applications#index'
