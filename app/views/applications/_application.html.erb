@@ -3,9 +3,5 @@
     <%= image_tag application.appimage_url %>
     <p><%= application.description.slice!(0...120) %></p>
     <%= link_to 'More... ', application %> <br/>
-<!--
-    <%= link_to 'Edit', edit_application_path(application) %>
-    <%= link_to 'Destroy', application, confirm: 'Are you sure?', method: :delete %>
--->
     <%= link_to 'Download', application.appexecutable_url %>
 </div>
