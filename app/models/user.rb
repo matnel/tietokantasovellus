@@ -10,6 +10,8 @@ class User < ActiveRecord::Base
 
   before_save :encrypt
 
+  has_many :applications
+
   def passwords_are_same
      if password != password_confirm
         errors.add( :password, "must be same" )

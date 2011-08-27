@@ -6,6 +6,8 @@ class Application < ActiveRecord::Base
   mount_uploader :appimage, ImageUploader
   mount_uploader :appexecutable, ExecutableUploader
 
+  belongs_to :user
+
   def has_comments?
      return comments.empty?
   end
