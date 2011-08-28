@@ -3,6 +3,11 @@ require "digest/md5"
 class User < ActiveRecord::Base
 
   validates_uniqueness_of :username
+  validates_presence_of :firstname
+  validates_presence_of :lastname
+  validates_length_of :password, :minimum => 6
+  validates_format_of :email, :with => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i
+  
   validate :passwords_are_same
 
   attr_accessor :password_confirm
