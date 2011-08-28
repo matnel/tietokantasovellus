@@ -1,5 +1,7 @@
 class CommentsController < ApplicationController
 
+  before_filter :is_application_owner, :except => [ :index , :show, :new, :create ]
+
   def index
     @comments = Comment.all
 
@@ -67,5 +69,14 @@ class CommentsController < ApplicationController
       format.html { redirect_to comments_url }
       format.json { head :ok }
     end
+  end
+
+  private
+
+  def is_application_owner
+     @comment = Comment.find(params[:id])
+     if current_user != @comment.application.user
+          render :nothing => true
+     end
   end
 end
