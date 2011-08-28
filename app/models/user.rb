@@ -3,10 +3,9 @@ require "digest/md5"
 class User < ActiveRecord::Base
 
   validates_uniqueness_of :username
+  validate :passwords_are_same
 
   attr_accessor :password_confirm
-
-  validate :passwords_are_same
 
   before_save :encrypt
 
