@@ -1,4 +1,4 @@
-<%= form_tag( application_data_entries_path, :method => "post" ) do  %>
+<%= form_for( @data_entry, :url => application_data_entries_path, :method => "post" ) do |f| %>
   <% if @data_entry.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@data_entry.errors.count, "error") %> prohibited this data_entry from being saved:</h2>
@@ -12,12 +12,12 @@
   <% end %>
 
   <div class="field">
-    <%= text_field_tag :uid %>
+    <%= f.text_field :uid %>
   </div>
   <div class="field">
-    <%= text_field_tag :key %>
+    <%= f.text_field :key %>
   </div>
   <div class="actions">
-    <%= submit_tag 'Done' %>
+    <%= f.submit 'Done' %>
   </div>
 <% end %>
