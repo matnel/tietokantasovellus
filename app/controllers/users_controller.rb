@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
 
+  before_filter :is_this_user, :only => [ :edit, :update, :destroy ]
+
   def index
     @users = User.all
 
@@ -29,9 +31,6 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
-    if @user != @current_user 
-       redirect_to root_url
-    end
   end
 
   def create
@@ -92,5 +91,15 @@ class UsersController < ApplicationController
     session[:current_user] = nil
     redirect_to root_url
   end
+
+  private
+
+  def is_this_user
+     @user = User.find( params[:id] )
+     if current_user != @user
+         render :nothing => true
+     end
+  end
+
 
 end
