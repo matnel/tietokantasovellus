@@ -11,6 +11,7 @@ class DataEntriesController < ApplicationController
 
   def create
     @data_entry = DataEntry.new(params[:data_entry])
+    @data_entry.application_id = params[:application_id]
 
     respond_to do |format|
       if @data_entry.save
