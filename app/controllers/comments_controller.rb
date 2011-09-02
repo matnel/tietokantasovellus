@@ -39,7 +39,7 @@ class CommentsController < ApplicationController
 
     respond_to do |format|
       if @comment.save
-        format.html { redirect_to @comment, notice: 'Comment was successfully created.' }
+        format.html { redirect_to default_path( @comment ) , notice: 'Comment was successfully created.' }
         format.json { render json: @comment, status: :created, location: @comment }
       else
         format.html { render action: "new" }
@@ -53,7 +53,7 @@ class CommentsController < ApplicationController
 
     respond_to do |format|
       if @comment.update_attributes(params[:comment])
-        format.html { redirect_to @comment, notice: 'Comment was successfully updated.' }
+        format.html { redirect_to default_path( @comment ), notice: 'Comment was successfully updated.' }
         format.json { head :ok }
       else
         format.html { render action: "edit" }
@@ -74,9 +74,13 @@ class CommentsController < ApplicationController
 
   private
 
+  def default_path( comment )
+     application_comment_path( comment.application_id, comment.id )      
+  end
+
   def is_application_owner
-     @comment = Application.find( params[:application_id] )
-     if current_user != @comment.user
+     application = Application.find( params[:application_id] ) 
+     if current_user != application.user
           render :nothing => true
      end
   end
