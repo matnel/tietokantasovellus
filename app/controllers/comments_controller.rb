@@ -39,9 +39,8 @@ class CommentsController < ApplicationController
 
     respond_to do |format|
       if @comment.save
-        render :nothing => true
-        # format.html { redirect_to @comment, notice: 'Comment was successfully created.' }
-        # format.json { render json: @comment, status: :created, location: @comment }
+        format.html { redirect_to @comment, notice: 'Comment was successfully created.' }
+        format.json { render json: @comment, status: :created, location: @comment }
       else
         format.html { render action: "new" }
         format.json { render json: @comment.errors, status: :unprocessable_entity }
@@ -76,8 +75,8 @@ class CommentsController < ApplicationController
   private
 
   def is_application_owner
-     @comment = Comment.find(params[:id])
-     if current_user != @comment.application.user
+     @comment = Application.find( params[:application_id] )
+     if current_user != @comment.user
           render :nothing => true
      end
   end
