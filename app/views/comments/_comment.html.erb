@@ -1,4 +1,12 @@
 <p class='comment' id='comment-id-<%= comment.id %>'>
+
+  <% if comment.application.user == @current_user %>
+     <p style='float: right;'>
+       <%= link_to 'Delete' , application_comment_path( comment.application.id, comment.id ), :method => 'delete' %>
+       <%= link_to 'Edit', edit_application_comment_path( comment.application.id, comment.id ) %>
+     </p>
+  <% end %>
+
   <%= comment.comment %> <br/>
   <%= time_ago_in_words( comment.updated_at ) %> ago
 </p>
