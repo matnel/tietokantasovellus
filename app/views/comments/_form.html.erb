@@ -1,4 +1,4 @@
-<%= form_for(@comment) do |f| %>
+<%= form_for( [ @application, @comment ] ) do |f| %>
   <% if @comment.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
@@ -11,8 +11,7 @@
     </div>
   <% end %>
 
-  <%= f.hidden_field :id %>
-  <%= f.hidden_field( :application_id , { :value => @application.id } ) %>
+  <%= f.hidden_field( :uid, { :value => 'web' } ) %>
 
   <div class="field">
     <%= f.label :comment %><br />
