@@ -11,6 +11,9 @@
 <%= render :partial => 'users/login' %>
 
 <div id='wrapper'>
+
+<%= render :partial => 'users/toolbar' if @current_user %>
+
 <%= yield %>
 </div>
 
