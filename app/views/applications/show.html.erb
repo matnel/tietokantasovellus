@@ -21,7 +21,8 @@
 
 <% if @application.user == @current_user %>
 <h3>Manage</h3>
-<%= link_to 'Edit', edit_application_path(@application) %>
+<%= link_to 'Statistics', statistics_application_path %>
+<%= link_to 'Edit', edit_application_path  %>
 <%= link_to 'Destroy', @application, confirm: 'Are you sure?', method: :delete %>
 <% end %>
 
