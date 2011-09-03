@@ -4,15 +4,16 @@ Mui. <%= link_to @current_user.name() , edit_user_path( @current_user ) %> <%= l
 <%= form_tag( login_users_path, :method => "post") do %>
 
   <div class="field">
-    <%= label :username, "Käyttäjätunnus" %><br />
+    <%= label :username, "Username" %><br />
     <%= text_field :username, "" %>
   </div>
   <div class="field">
-    <%= label :password, "salasana" %><br />
+    <%= label :password, "Password" %><br />
     <%= password_field :password, "" %>
   </div>
   <div class="actions">
-    <%= submit_tag "Do Magic" %>
+    <%= submit_tag "Login" %>
+    <%= link_to 'New user?', new_user_path %>
   </div>
 
 <% end %>
