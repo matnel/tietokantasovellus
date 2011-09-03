@@ -8,5 +8,10 @@
 
 #wrapper {
 	width: 80%;
-	margin: 10px auto;
+	margin: 50px auto;
+}
+
+#box-login {
+	float: right;
+	margin-right: 20px;
 }
