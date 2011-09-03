@@ -12,14 +12,16 @@ body.applications {
    margin-right: 10px;
    margin-top: 10px;
    border: 1px solid black;
+   width: 225px;
 }
 
 #left_panel {
-  float: left;
-  width: 30%;
+  display: block;
+  width: 28%;
 }
 
 #main_panel {
-  float: right;
-  width: 70%;
+  margin-left: 30%;
+  width: 68%;
+  display: block;
 }
