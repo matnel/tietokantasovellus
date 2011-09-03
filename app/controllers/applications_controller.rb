@@ -38,6 +38,8 @@ class ApplicationsController < ApplicationController
   def create
     @application = Application.new(params[:application])
 
+    @application.user = User.find( params[:user_id] )
+
     respond_to do |format|
       if @application.save
         format.html { redirect_to @application, notice: 'Application was successfully created.' }
