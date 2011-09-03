@@ -27,7 +27,7 @@
 
 <h3>Comments for this application</h3>
 
-<% @comment = Comment.new %>
+<% @comment = Comment.new( { :application => @application } ) %>
 <%= render :partial => 'comments/form' %>
 
 <%= "No comments yet!" if @application.has_comments?  %>
