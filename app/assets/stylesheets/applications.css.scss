@@ -2,26 +2,23 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-body.applications {
-  // Add the applications class to your body tag
-  // Then, place scoped styles here.
-}
-
 .application {
-   float: left;
+   padding: 5px;
    margin-right: 10px;
    margin-top: 10px;
    border: 1px solid black;
    width: 225px;
+   display: block;
 }
 
 #left_panel {
   display: block;
-  width: 28%;
+  width: 230px;
 }
 
 #main_panel {
-  margin-left: 30%;
+  margin-left: 235px;
   width: 68%;
   display: block;
+  float: right;
 }
