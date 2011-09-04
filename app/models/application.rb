@@ -8,6 +8,9 @@ class Application < ActiveRecord::Base
 
   belongs_to :user
 
+  validates_presence_of :name
+  validates :version,  :numericality => true
+
   def has_comments?
      return comments.empty?
   end
@@ -17,7 +20,7 @@ class Application < ActiveRecord::Base
   end
 
   def data_number_of_ids(tag)
-      data_entries_with_tag( tag ).group( :id ).length
+      data_entries_with_tag( tag ).group( :uid )
   end
 
   private
